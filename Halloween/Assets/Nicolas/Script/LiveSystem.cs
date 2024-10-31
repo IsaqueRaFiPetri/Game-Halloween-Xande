@@ -3,45 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class LiveSystem : MonoBehaviour
 {
 
-    public static PlayerController instance;
+    public static LiveSystem instance;
 
     [Header("Referencias")]
-
-    [Tooltip("Fisica do Player")]
-    public Rigidbody2D rb;
-
-    [Tooltip("Transforme da Camera")]
-    public Camera viewCam;
 
     [Tooltip("Efeito do tiro")]
     public GameObject bulletcImpact;
 
-    [Tooltip("Animator para a arma")]
-    public Animator gunAnim;
+    /*[Tooltip("Animator para a arma")]
+    public Animator gunAnim;*/
 
-    [Tooltip("Tela de Morte")]
-    public GameObject deadScreen;
+    /*[Tooltip("Tela de Morte")]
+    public GameObject deadScreen;*/
 
     [Tooltip("Texto da vida do player e das balas")]
     public TextMeshProUGUI textHealth, textAmmo;
 
+    [Space(10)]
+
     [Header("Configurações")]
-
-    [Tooltip("Velocidade da Movimentação do Player")]
-    public float speedMove;
-
-    [Tooltip("Inputs dos comandos do Player")]
-    Vector2 moveInput;
-
-    Vector2 mouseInput;
-
-    [Tooltip("Sentibilidade do Cursor")]
-    public float mouseSensitivity;
 
     [Tooltip("Tempo de tiro")]
     public float currentAmmo;
@@ -58,13 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         instance = this;
 
-        gunAnim = GameObject.Find("Shoot").GetComponent<Animator>();
-
-        rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-
-        viewCam = GameObject.Find("Main Camera").GetComponent<Camera>();
-
-        
+        //gunAnim = GameObject.Find("Shoot").GetComponent<Animator>();
     }
 
     void Start()
@@ -76,29 +56,12 @@ public class PlayerController : MonoBehaviour
         textAmmo.text = currentAmmo.ToString();
     }
 
-    
+
     void Update()
     {
-        if(!hasDied)
-        { 
-        moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        Vector3 moveHozizontal = transform.up * -moveInput.x;
-
-        Vector3 moveVertical = transform.right * moveInput.y;
-
-        rb.velocity = (moveHozizontal + moveVertical) * speedMove;
-
-
-
-        mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;
-
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z - mouseInput.x);
-
-
-        viewCam.transform.localRotation = Quaternion.Euler(viewCam.transform.localRotation.eulerAngles + new Vector3(0f,mouseInput.y,0f));
-
-        ShootGun();
+        if (!hasDied)
+        {
+            ShootGun();
 
         }
     }
@@ -110,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
             if (currentAmmo > 0)
             {
-                Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
+                Ray ray = FirstPersonController.instance.playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit))
@@ -119,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
                     if (hit.transform.CompareTag("Enemy"))
                     {
-                        hit.transform.parent.GetComponent<EnemyController>().TakeDamege();
+                        hit.transform.GetComponent<EnemyController>().TakeDamege();
                     }
 
                     AudioController.instance.PlayGunShootPickUp();
@@ -129,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
                 }
                 currentAmmo--;
-                gunAnim.SetTrigger("Shoot");
+                //gunAnim.SetTrigger("Shoot");
                 UpdateAmmoUI();
             }
         }
@@ -141,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            deadScreen.SetActive(true);
+            SceneManager.LoadScene("Demo");
             hasDied = true;
             currentHealth = 0;
         }

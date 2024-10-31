@@ -10,7 +10,7 @@ public class MediKIt : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerController.instance.AddHealth(HealthAmount);
+            LiveSystem.instance.AddHealth(HealthAmount);
 
             AudioController.instance.PlayHealthPickUp();
 

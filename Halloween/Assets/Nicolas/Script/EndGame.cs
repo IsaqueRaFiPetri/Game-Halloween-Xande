@@ -23,7 +23,7 @@ public class EndGame : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Screen.SetActive(true);
-            PlayerController.instance.enabled = false;
+            FirstPersonController.instance.enabled = false;
             gameManager.enabled = false;
         }
     }

@@ -14,8 +14,8 @@ public class MoveObj : MonoBehaviour
     public string _tagObjects = "Respawn";
     public float forcaDeArremeco = 800;
     [Space(10)]
-    public Sprite texturaMaoFechada;
-    public Sprite texturaMaoAberta;
+    public GameObject texturaMaoFechada;
+    public GameObject texturaMaoAberta;
 
     bool canMove;
     bool isMoving;
@@ -31,8 +31,6 @@ public class MoveObj : MonoBehaviour
     GameObject tempObject;
 
     Camera mainCamera;
-    GameObject objClosedHand;
-    GameObject objOpenHand;
 
     void Awake()
     {
@@ -53,7 +51,7 @@ public class MoveObj : MonoBehaviour
         {
             tempDistance = tempfloatNear + 0.05f;
         }
-        if (texturaMaoFechada)
+        /*if (texturaMaoFechada)
         {
             objClosedHand = new GameObject("objHandTextureClosed");
             objClosedHand.transform.parent = this.transform;
@@ -72,7 +70,7 @@ public class MoveObj : MonoBehaviour
             objOpenHand.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
             objOpenHand.transform.localRotation = Quaternion.identity;
             objOpenHand.SetActive(false);
-        }
+        }*/
     }
 
     void Update()
@@ -154,18 +152,18 @@ public class MoveObj : MonoBehaviour
         //sprite elements
         if (canMove && !isMoving && texturaMaoAberta)
         {
-            objClosedHand.SetActive(false);
-            objOpenHand.SetActive(true);
+            texturaMaoFechada.SetActive(false);
+            texturaMaoAberta.SetActive(true);
         }
         else if (isMoving && texturaMaoFechada)
         {
-            objClosedHand.SetActive(true);
-            objOpenHand.SetActive(false);
+            texturaMaoFechada.SetActive(true);
+            texturaMaoAberta.SetActive(false);
         }
         else
         {
-            objClosedHand.SetActive(false);
-            objOpenHand.SetActive(false);
+            texturaMaoFechada.SetActive(true);
+            texturaMaoAberta.SetActive(false);
         }
     }
 

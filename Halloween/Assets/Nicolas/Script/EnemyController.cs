@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody))]
 public class EnemyController : MonoBehaviour
 {
 
@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
 
     public float playerRange = 10f;
 
-    public Rigidbody2D rb;
+    public Rigidbody rb;
 
     public float moveSpeed = 2f;
 
@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Start()
@@ -31,16 +31,18 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < playerRange)
+        if (Vector3.Distance(transform.position, FirstPersonController.instance.transform.position) < playerRange)
         {
-            Vector3 playerDistance = PlayerController.instance.transform.position - transform.position;
+            Vector3 playerDistance = FirstPersonController.instance.transform.position - transform.position;
+
+            
 
             rb.velocity = playerDistance.normalized * moveSpeed;
 
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.velocity = Vector3.zero;
         }
     }
 
@@ -57,11 +59,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerController.instance.TakeDamage(damageAmount);
+            LiveSystem.instance.TakeDamage(damageAmount);
 
             //Destroy(gameObject);
         }

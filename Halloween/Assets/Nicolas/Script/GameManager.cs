@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("E"))
         {
             UnLockCursor();
+            //objClosedHand.transform.parent = this.transform;
         }
 
         if (Input.GetMouseButtonDown(0))
