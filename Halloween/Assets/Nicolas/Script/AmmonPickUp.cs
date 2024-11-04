@@ -12,7 +12,7 @@ public class AmmonPickUp : MonoBehaviour
         {
             LiveSystem.instance.currentAmmo += ammoAmount;
 
-            LiveSystem.instance.UpdateAmmoUI();
+            //LiveSystem.instance.UpdateAmmoUI();
 
 
             AudioController.instance.PlayAmmoPickUp();

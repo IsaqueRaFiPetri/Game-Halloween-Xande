@@ -77,7 +77,7 @@ public class MoveObj : MonoBehaviour
     {
         //raycast camera forward
         rayEndPoint = transform.position + transform.forward * distance;
-        if (Physics.Raycast(transform.position, transform.forward, out tempHit, 7))
+        if (Physics.Raycast(transform.position, transform.forward, out tempHit, 2))
         {
             if (Vector3.Distance(transform.position, tempHit.point) <= 6 && tempHit.transform.CompareTag(_tagObjects))
             {
@@ -157,8 +157,8 @@ public class MoveObj : MonoBehaviour
         }
         else if (isMoving && texturaMaoFechada)
         {
-            texturaMaoFechada.SetActive(true);
-            texturaMaoAberta.SetActive(false);
+            /*texturaMaoFechada.SetActive(true);
+            texturaMaoAberta.SetActive(false);*/
         }
         else
         {

@@ -61,7 +61,7 @@ public class LiveSystem : MonoBehaviour
     {
         if (!hasDied)
         {
-            ShootGun();
+            //ShootGun();
 
         }
     }
@@ -91,9 +91,9 @@ public class LiveSystem : MonoBehaviour
                 {
 
                 }
-                currentAmmo--;
+                /*currentAmmo--;
                 //gunAnim.SetTrigger("Shoot");
-                UpdateAmmoUI();
+                UpdateAmmoUI();*/
             }
         }
     }
@@ -123,9 +123,9 @@ public class LiveSystem : MonoBehaviour
         textHealth.text = currentHealth.ToString() + "%";
     }
 
-    public void UpdateAmmoUI()
+    /*public void UpdateAmmoUI()
     {
         textAmmo.text = currentAmmo.ToString();
-    }
+    }*/
 
 }
