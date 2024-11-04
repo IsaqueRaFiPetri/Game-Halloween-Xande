@@ -12,6 +12,7 @@ public class MoveObj : MonoBehaviour
     //O asset oficial encontra-se neste link: https://assetstore.unity.com/packages/tools/physics/ms-drag-objects-82992
 
     public string _tagObjects = "Respawn";
+    public string _tagArms, _tagArms1, _tagArms2;
     public float forcaDeArremeco = 800;
     [Space(10)]
     public GameObject texturaMaoFechada;
@@ -98,6 +99,27 @@ public class MoveObj : MonoBehaviour
                     isMoving = true;
                 }
             }
+
+            if (Vector3.Distance(transform.position, tempHit.point) <= 6 && tempHit.transform.CompareTag(_tagArms))
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Inventory.instance.slotLock = true;
+                    tempObject = tempHit.transform.gameObject;
+                    Destroy(tempObject);
+                }
+            }
+            
+            if (Vector3.Distance(transform.position, tempHit.point) <= 6 && tempHit.transform.CompareTag(_tagArms1))
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Inventory.instance.slotLock1 = true;
+                    tempObject = tempHit.transform.gameObject; 
+                    Destroy(tempObject);
+                }
+            }
+
         }
         else
         {

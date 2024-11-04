@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public static Inventory instance;
     
     public GameObject[] arms = new GameObject[4];
 
-    
+    public bool slotLock, slotLock1;
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -21,23 +26,30 @@ public class Inventory : MonoBehaviour
             arms[0].SetActive(true);
 
         }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+
+        if (slotLock)
         {
-            for (int i = 0; arms.Length > i; i++)
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                arms[i].SetActive(false);
+                for (int i = 0; arms.Length > i; i++)
+                {
+                    arms[i].SetActive(false);
+                }
+                arms[1].SetActive(true);
             }
-            arms[1].SetActive(true);
+        }
+
+        if (slotLock1)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                for (int i = 0; arms.Length > i; i++)
+                {
+                    arms[i].SetActive(false);
+                }
+                arms[2].SetActive(true);
+            }
         }
         
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            for (int i = 0; arms.Length > i; i++)
-            {
-                arms[i].SetActive(false);
-            }
-            arms[2].SetActive(true);
-        }
     }
 }

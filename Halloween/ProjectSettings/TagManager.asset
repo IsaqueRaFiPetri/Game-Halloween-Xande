@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - MoveObj
+  - arms1
+  - arms2
   layers:
   - Default
   - TransparentFX
