@@ -32,6 +32,7 @@ public class ArmsSystem : MonoBehaviour
     [Tooltip("Nome da Animação")]
     public string activeAnim;
 
+    public string activeEnd;
 
     private void Awake()
     {
@@ -77,6 +78,10 @@ public class ArmsSystem : MonoBehaviour
                 currentAmmo--;
                 gunAnim.SetTrigger(activeAnim);
                 UpdateAmmoUI();
+            }
+            else if (currentAmmo <= 0)
+            {
+                gunAnim.SetTrigger(activeEnd);
             }
         }
     }
