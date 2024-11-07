@@ -29,6 +29,9 @@ public class ArmsSystem : MonoBehaviour
     [Tooltip("Dano do tiro")]
     public int damageShoot;
 
+    [Tooltip("Nome da Animação")]
+    public string activeAnim;
+
 
     private void Awake()
     {
@@ -72,7 +75,7 @@ public class ArmsSystem : MonoBehaviour
 
                 }
                 currentAmmo--;
-                gunAnim.SetTrigger("Shoot");
+                gunAnim.SetTrigger(activeAnim);
                 UpdateAmmoUI();
             }
         }

@@ -1352,7 +1352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &614568089
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5335,13 +5335,15 @@ GameObject:
   - component: {fileID: 2103281336}
   - component: {fileID: 2103281338}
   - component: {fileID: 2103281337}
+  - component: {fileID: 2103281339}
+  - component: {fileID: 2103281340}
   m_Layer: 5
   m_Name: Hearth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2103281336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5400,6 +5402,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103281335}
   m_CullTransparentMesh: 1
+--- !u!114 &2103281339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103281335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 470c16e9e6e397d4fbe29c2a73be9c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletcImpact: {fileID: 8815197829953755521, guid: 1185d687c6927d3489a3953416739514, type: 3}
+  gunAnim: {fileID: 2103281340}
+  textAmmo: {fileID: 1333923122}
+  currentAmmo: 50
+  damageShoot: 2
+  activeAnim: shoot
+--- !u!95 &2103281340
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103281335}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7810075aa4b6ac147a2ba9889c42102d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!43 &2117137680
 Mesh:
   m_ObjectHideFlags: 0
@@ -6997,10 +7037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94d821230740cc458267c55b667995f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletcImpact: {fileID: 8815197829953755521, guid: 1185d687c6927d3489a3953416739514, type: 3}
   textHealth: {fileID: 7589910313488030840}
-  textAmmo: {fileID: 1333923122}
-  currentAmmo: 5
   maxHealth: 100
   hasDied: 0
 --- !u!224 &4918451716143532588
