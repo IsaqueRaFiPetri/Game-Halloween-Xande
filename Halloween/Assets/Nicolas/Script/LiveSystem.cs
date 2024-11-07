@@ -13,8 +13,8 @@ public class LiveSystem : MonoBehaviour
 
     [Header("Referencias")]
 
-    [Tooltip("Efeito do tiro")]
-    public GameObject bulletcImpact;
+    /*[Tooltip("Efeito do tiro")]
+    public GameObject bulletcImpact;*/
 
     /*[Tooltip("Animator para a arma")]
     public Animator gunAnim;*/
@@ -29,8 +29,8 @@ public class LiveSystem : MonoBehaviour
 
     [Header("Configurações")]
 
-    [Tooltip("Tempo de tiro")]
-    public float currentAmmo;
+    /*[Tooltip("Tempo de tiro")]
+    public float currentAmmo;*/
 
     [Tooltip("Vida Maxima do Jogador")]
     public int maxHealth = 100;
@@ -78,7 +78,4 @@ public class LiveSystem : MonoBehaviour
         }
         textHealth.text = currentHealth.ToString() + "%";
     }
-
-    
-
 }

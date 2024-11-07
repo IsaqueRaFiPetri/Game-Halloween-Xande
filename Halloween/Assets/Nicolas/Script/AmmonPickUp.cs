@@ -10,7 +10,7 @@ public class AmmonPickUp : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            LiveSystem.instance.currentAmmo += ammoAmount;
+            ArmsSystem.instance.currentAmmo += ammoAmount;
 
             ArmsSystem.instance.UpdateAmmoUI();
 
