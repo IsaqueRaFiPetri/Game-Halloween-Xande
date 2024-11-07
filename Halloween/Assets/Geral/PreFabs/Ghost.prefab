@@ -140,4 +140,4 @@ MonoBehaviour:
   playerRange: 16
   rb: {fileID: 6787163693984327466}
   moveSpeed: 2
-  damageAmount: 0
+  damageAmount: 2

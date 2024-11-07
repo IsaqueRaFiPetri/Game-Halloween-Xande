@@ -140,4 +140,4 @@ MonoBehaviour:
   playerRange: 3
   rb: {fileID: 35409731449256052}
   moveSpeed: 10
-  damageAmount: 1000
+  damageAmount: 100
