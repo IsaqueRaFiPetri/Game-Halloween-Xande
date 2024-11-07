@@ -23,7 +23,7 @@ public class LiveSystem : MonoBehaviour
     public GameObject deadScreen;*/
 
     [Tooltip("Texto da vida do player e das balas")]
-    public TextMeshProUGUI textHealth, textAmmo;
+    public TextMeshProUGUI textHealth;
 
     [Space(10)]
 
@@ -52,50 +52,6 @@ public class LiveSystem : MonoBehaviour
         currentHealth = maxHealth;
 
         textHealth.text = currentHealth.ToString() + "%";
-
-        textAmmo.text = currentAmmo.ToString();
-    }
-
-
-    void Update()
-    {
-        if (!hasDied)
-        {
-            //ShootGun();
-
-        }
-    }
-
-    private void ShootGun()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-
-            if (currentAmmo > 0)
-            {
-                Ray ray = FirstPersonController.instance.playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit))
-                {
-                    Instantiate(bulletcImpact, hit.point, transform.rotation);
-
-                    if (hit.transform.CompareTag("Enemy"))
-                    {
-                        hit.transform.GetComponent<EnemyController>().TakeDamege();
-                    }
-
-                    AudioController.instance.PlayGunShootPickUp();
-                }
-                else
-                {
-
-                }
-                /*currentAmmo--;
-                //gunAnim.SetTrigger("Shoot");
-                UpdateAmmoUI();*/
-            }
-        }
     }
 
     public void TakeDamage(int damageAmount)
@@ -123,9 +79,6 @@ public class LiveSystem : MonoBehaviour
         textHealth.text = currentHealth.ToString() + "%";
     }
 
-    /*public void UpdateAmmoUI()
-    {
-        textAmmo.text = currentAmmo.ToString();
-    }*/
+    
 
 }

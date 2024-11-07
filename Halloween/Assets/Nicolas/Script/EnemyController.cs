@@ -46,9 +46,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void TakeDamege()
+    public void TakeDamege(int damage)
     {
-        health--;
+        health -= damage;
         if (health <= 0)
         {
             Destroy(gameObject);
