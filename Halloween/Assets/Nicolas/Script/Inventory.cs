@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour
 
     public bool slotLock, slotLock1;
 
+    public GameObject screenMenu;
+
     private void Awake()
     {
         instance = this;
@@ -17,6 +19,13 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetButtonDown("Cancel") && screenMenu == false)
+        {
+            screenMenu.SetActive(true);
+
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             for (int i = 0; arms.Length > i; i++)
