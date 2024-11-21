@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 609546605528784934}
   - component: {fileID: 7347327474317746309}
   - component: {fileID: 6856618574182974993}
+  - component: {fileID: 7196300957463441966}
   m_Layer: 0
   m_Name: Mule
   m_TagString: Enemy
@@ -139,5 +140,19 @@ MonoBehaviour:
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
   playerRange: 10
   rb: {fileID: 7347327474317746309}
-  moveSpeed: 8
+  moveSpeed: 6
   damageAmount: 5
+--- !u!136 &7196300957463441966
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3290680449728908835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.26803088
+  m_Height: 1.953125
+  m_Direction: 1
+  m_Center: {x: -0.059144735, y: 0, z: 0}

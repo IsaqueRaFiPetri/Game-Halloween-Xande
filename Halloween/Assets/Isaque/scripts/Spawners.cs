@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Spawners : MonoBehaviour
 {
-    public float spawningRate = 3f;
+    public float spawningRate = 5f;
     public GameObject[] enemyPrefab;
     public Transform[] spawnPoints;
 

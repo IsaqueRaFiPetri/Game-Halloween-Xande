@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 254080254528639041}
   - component: {fileID: 7384540163396091694}
   - component: {fileID: 7098045288276331100}
+  - component: {fileID: -816118926897649536}
   m_Layer: 0
   m_Name: Labatut
   m_TagString: Enemy
@@ -139,5 +140,19 @@ MonoBehaviour:
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
   playerRange: 10
   rb: {fileID: 7384540163396091694}
-  moveSpeed: 10
+  moveSpeed: 1
   damageAmount: 30
+--- !u!136 &-816118926897649536
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424859041409446529}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.29546863
+  m_Height: 1.875
+  m_Direction: 1
+  m_Center: {x: 0.008659303, y: 0, z: 0}
