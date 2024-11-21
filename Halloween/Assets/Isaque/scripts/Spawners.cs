@@ -13,8 +13,8 @@ public class Spawners : MonoBehaviour
     {
         if(lastSpawnTime + spawningRate < Time.time)
         {
-            var randomSpawnPoints = spawnPoints[Random.Range(0, spawnPoints.Length - 1)];
-            var randomEnemy = enemyPrefab[Random.Range(0, spawnPoints.Length - 1)];
+            var randomSpawnPoints = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            var randomEnemy = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
             Instantiate(randomEnemy, randomSpawnPoints.position, Quaternion.identity);
             lastSpawnTime = Time.time;
             spawningRate *= 0.98f;
