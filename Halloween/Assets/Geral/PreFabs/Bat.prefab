@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7998028873446570585}
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,5 +139,5 @@ MonoBehaviour:
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
   playerRange: 15
   rb: {fileID: 7709369376938479102}
-  moveSpeed: 25
+  moveSpeed: 12
   damageAmount: 2
