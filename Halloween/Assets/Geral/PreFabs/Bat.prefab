@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6315124402005284956}
   - component: {fileID: 7709369376938479102}
   - component: {fileID: 7998028873446570585}
+  - component: {fileID: -3453870292284024072}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6315124402005284953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.452, y: 3.943, z: 0}
+  m_LocalPosition: {x: -5.452, y: 3.983, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,7 +138,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 7
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
-  playerRange: 15
+  playerRange: 10
   rb: {fileID: 7709369376938479102}
-  moveSpeed: 12
+  moveSpeed: 5
   damageAmount: 2
+--- !u!136 &-3453870292284024072
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315124402005284953}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.26061296
+  m_Height: 1.9067914
+  m_Direction: 1
+  m_Center: {x: 0.0029969215, y: -0.42391884, z: 0.17067623}

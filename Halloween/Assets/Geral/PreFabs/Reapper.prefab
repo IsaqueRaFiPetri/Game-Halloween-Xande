@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8999076678443522618}
   - component: {fileID: 5662697189304426495}
   - component: {fileID: 159113414958359480}
+  - component: {fileID: 815484163729362652}
   m_Layer: 0
   m_Name: Reapper
   m_TagString: Enemy
@@ -139,5 +140,19 @@ MonoBehaviour:
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
   playerRange: 12
   rb: {fileID: 0}
-  moveSpeed: 9
+  moveSpeed: 4
   damageAmount: 44
+--- !u!136 &815484163729362652
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6492128316029298818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.55620575
+  m_Height: 1.875
+  m_Direction: 1
+  m_Center: {x: 0.061507702, y: 0, z: 0}

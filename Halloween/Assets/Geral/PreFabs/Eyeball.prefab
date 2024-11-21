@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2711425855821248860}
   - component: {fileID: 805490784316364474}
   - component: {fileID: 2846239746800780331}
+  - component: {fileID: -4522298248110871243}
   m_Layer: 0
   m_Name: Eyeball
   m_TagString: Enemy
@@ -139,5 +140,19 @@ MonoBehaviour:
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
   playerRange: 36
   rb: {fileID: 805490784316364474}
-  moveSpeed: 10
+  moveSpeed: 5
   damageAmount: 2
+--- !u!136 &-4522298248110871243
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711425855821248861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.33662462
+  m_Height: 1.9085479
+  m_Direction: 1
+  m_Center: {x: 0.014878273, y: -0.5629976, z: 0}

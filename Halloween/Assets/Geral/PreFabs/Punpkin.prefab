@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6781340579652720687}
   - component: {fileID: 4595684675170522463}
   - component: {fileID: 5536943584138223695}
+  - component: {fileID: 6842723916420205795}
   m_Layer: 0
   m_Name: Punpkin
   m_TagString: Enemy
@@ -139,5 +140,19 @@ MonoBehaviour:
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
   playerRange: 5
   rb: {fileID: 0}
-  moveSpeed: 5
+  moveSpeed: 2
   damageAmount: 5
+--- !u!136 &6842723916420205795
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6994902498641817721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5859375
+  m_Height: 1.171875
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
