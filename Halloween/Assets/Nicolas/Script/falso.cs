@@ -6,7 +6,6 @@ public class falso : MonoBehaviour
 {
     public GameObject falsoPrefab;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
