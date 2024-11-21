@@ -6,7 +6,7 @@ public class AmmonPickUp : MonoBehaviour
 {
     public int ammoAmount = 25;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
         {
