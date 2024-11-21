@@ -4,13 +4,6 @@ using UnityEngine;
 public class MoveObj : MonoBehaviour
 {
 
-    //Este código foi desenvolvido por Marcos Schultz. Ele é uma versão extremamente reduzida e compacta do código original, também desenvolvido por Marcos Schultz
-
-    //O asset completo conta com vários recursos complementares, como a influência da massa no movimento, movimnento por AddForce, position, velocity, modificação dos inputs,
-    //reconhecimento dos objetos por tag, nome ou PhysicsMaterial, dentre outras coisas.
-
-    //O asset oficial encontra-se neste link: https://assetstore.unity.com/packages/tools/physics/ms-drag-objects-82992
-
     public string _tagObjects = "Respawn";
     public string _tagArms, _tagArms1, _tagArms2;
     public float forcaDeArremeco = 800;
