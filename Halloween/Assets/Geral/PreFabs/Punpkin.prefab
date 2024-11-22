@@ -138,10 +138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
-  playerRange: 5
-  rb: {fileID: 0}
+  playerRange: 1000
+  rb: {fileID: 4595684675170522463}
   moveSpeed: 2
   damageAmount: 5
+  anim: {fileID: 6781340579652720687}
 --- !u!136 &6842723916420205795
 CapsuleCollider:
   m_ObjectHideFlags: 0

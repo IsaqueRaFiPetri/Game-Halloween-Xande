@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 592743267305514801}
   - component: {fileID: 8775577400114516516}
   - component: {fileID: 8068085378130038034}
+  - component: {fileID: -2258617437080147361}
   m_Layer: 0
   m_Name: Cuca
   m_TagString: Enemy
@@ -138,10 +139,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
-  playerRange: 6
+  playerRange: 1000
   rb: {fileID: 592743267305514801}
   moveSpeed: 3
   damageAmount: 10
+  nameAnim: 
+  anim: {fileID: 410435153958499038}
 --- !u!136 &8068085378130038034
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -156,3 +159,15 @@ CapsuleCollider:
   m_Height: 1.875
   m_Direction: 1
   m_Center: {x: -0.0150101185, y: 0, z: 0}
+--- !u!114 &-2258617437080147361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410435153958499033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466f6887533366c4882beb71d3ec7fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

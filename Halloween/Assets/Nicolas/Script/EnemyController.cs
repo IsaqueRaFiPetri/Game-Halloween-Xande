@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyController : MonoBehaviour
@@ -18,6 +19,10 @@ public class EnemyController : MonoBehaviour
 
     public int damageAmount;
 
+    public Animator anim;
+
+    public bool boss = false;
+
 
     private void Awake()
     {
@@ -31,6 +36,8 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+       
+
         if (Vector3.Distance(transform.position, FirstPersonController.instance.transform.position) < playerRange)
         {
             Vector3 playerDistance = FirstPersonController.instance.transform.position - transform.position;
@@ -51,11 +58,21 @@ public class EnemyController : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Dead(0);
+
+            Destroy(gameObject, 1);
 
             Instantiate(deadFX, transform.position, transform.rotation);
 
             AudioController.instance.PlayEnemyDeadPickUp();
+        }
+    }
+
+    void Dead(int index)
+    {
+        if (boss == true)
+        {
+            SceneManager.LoadScene(index);
         }
     }
 
@@ -64,6 +81,8 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             LiveSystem.instance.TakeDamage(damageAmount);
+
+            anim.SetBool("Attk", true);
 
             //Destroy(gameObject);
         }

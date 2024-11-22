@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7709369376938479102}
   - component: {fileID: 7998028873446570585}
   - component: {fileID: -3453870292284024072}
+  - component: {fileID: 3138787995534512140}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -138,10 +139,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 7
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
-  playerRange: 10
+  playerRange: 1000
   rb: {fileID: 7709369376938479102}
   moveSpeed: 5
   damageAmount: 2
+  anim: {fileID: 6315124402005284956}
 --- !u!136 &-3453870292284024072
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -156,3 +158,15 @@ CapsuleCollider:
   m_Height: 1.9067914
   m_Direction: 1
   m_Center: {x: 0.0029969215, y: -0.42391884, z: 0.17067623}
+--- !u!114 &3138787995534512140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315124402005284953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466f6887533366c4882beb71d3ec7fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

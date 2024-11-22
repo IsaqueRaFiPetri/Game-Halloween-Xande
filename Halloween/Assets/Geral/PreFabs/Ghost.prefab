@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6787163693984327466}
   - component: {fileID: 3835622501929869446}
   - component: {fileID: -3950613448807210840}
+  - component: {fileID: -2670397018621610322}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Enemy
@@ -138,10 +139,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
-  playerRange: 3
+  playerRange: 1000
   rb: {fileID: 6787163693984327466}
   moveSpeed: 2
   damageAmount: 2
+  anim: {fileID: 1939760234288703911}
 --- !u!136 &-3950613448807210840
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -156,3 +158,15 @@ CapsuleCollider:
   m_Height: 2.1571894
   m_Direction: 1
   m_Center: {x: 0.047169447, y: -0.14109471, z: 0}
+--- !u!114 &-2670397018621610322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208817654292646466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466f6887533366c4882beb71d3ec7fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

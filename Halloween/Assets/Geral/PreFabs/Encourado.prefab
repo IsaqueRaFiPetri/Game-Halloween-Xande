@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 35409731449256052}
   - component: {fileID: 5229137199665990543}
   - component: {fileID: -6721132843768450563}
+  - component: {fileID: -3853849621371449091}
   m_Layer: 0
   m_Name: Encourado
   m_TagString: Enemy
@@ -138,10 +139,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   deadFX: {fileID: 4339045939059990506, guid: 47d712d0c3dc7dc418561471898807c2, type: 3}
-  playerRange: 3
+  playerRange: 1000
   rb: {fileID: 35409731449256052}
   moveSpeed: 10
-  damageAmount: 100
+  damageAmount: 80
+  anim: {fileID: 5030103395136876594}
+  boss: 0
 --- !u!136 &-6721132843768450563
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -156,3 +159,15 @@ CapsuleCollider:
   m_Height: 1.8804932
   m_Direction: 1
   m_Center: {x: 0.017515093, y: 0, z: 0}
+--- !u!114 &-3853849621371449091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030103395136876593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466f6887533366c4882beb71d3ec7fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

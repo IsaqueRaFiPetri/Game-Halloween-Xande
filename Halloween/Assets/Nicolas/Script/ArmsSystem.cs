@@ -34,6 +34,8 @@ public class ArmsSystem : MonoBehaviour
 
     public string activeEnd;
 
+    public bool infinitiAmmo = false;
+
     private void Awake()
     {
         instance = this;
@@ -54,35 +56,63 @@ public class ArmsSystem : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
-            if (currentAmmo > 0)
+            if (infinitiAmmo == false)
             {
-                Ray ray = FirstPersonController.instance.playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit))
+                if (currentAmmo > 0)
                 {
-                    Instantiate(bulletcImpact, hit.point, transform.rotation);
+                    Ray ray = FirstPersonController.instance.playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
+                    RaycastHit hit;
 
-                    if (hit.transform.CompareTag("Enemy"))
+                    if (Physics.Raycast(ray, out hit))
                     {
-                        hit.transform.GetComponent<EnemyController>().TakeDamege(damageShoot);
+                        Instantiate(bulletcImpact, hit.point, transform.rotation);
+
+                        if (hit.transform.CompareTag("Enemy"))
+                        {
+                            hit.transform.GetComponent<EnemyController>().TakeDamege(damageShoot);
+                        }
+
+                        AudioController.instance.PlayGunShootPickUp();
                     }
+                    else
+                    {
 
-                    AudioController.instance.PlayGunShootPickUp();
+                    }
+                    currentAmmo--;
+                    gunAnim.SetTrigger(activeAnim);
+                    UpdateAmmoUI();
                 }
-                else
+                else if (currentAmmo <= 0)
                 {
-
+                    gunAnim.SetTrigger(activeEnd);
                 }
-                currentAmmo--;
-                gunAnim.SetTrigger(activeAnim);
-                UpdateAmmoUI();
             }
-            else if (currentAmmo <= 0)
+            if (infinitiAmmo == true)
             {
-                gunAnim.SetTrigger(activeEnd);
+                
+                    Ray ray = FirstPersonController.instance.playerCamera.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
+                    RaycastHit hit;
+
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        Instantiate(bulletcImpact, hit.point, transform.rotation);
+
+                        if (hit.transform.CompareTag("Enemy"))
+                        {
+                            hit.transform.GetComponent<EnemyController>().TakeDamege(damageShoot);
+                        }
+
+                        AudioController.instance.PlayGunShootPickUp();
+                    }
+                    else
+                    {
+                        gunAnim.SetTrigger(activeEnd);
+                    }
+                    gunAnim.SetTrigger(activeAnim);
+            
+                
             }
+            
         }
     }
     public void UpdateAmmoUI()

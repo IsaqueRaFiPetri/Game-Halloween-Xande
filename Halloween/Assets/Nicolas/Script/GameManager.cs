@@ -1,20 +1,60 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject pausePanel;
+    private bool isPaused = false;
+
     private void Awake()
     {
         LockCursor();
     }
 
+    public void troca(string tp)
+    {
+        SceneManager.LoadScene(tp);
+    }
+
+    void TogglePause()
+    {
+        if (isPaused)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            PauseGame();
+        }
+    }
+
+    void PauseGame()
+    {
+        UnLockCursor();
+        Time.timeScale = 0f;
+        pausePanel.SetActive(true);
+        isPaused = true;
+    }
+
+    void ResumeGame()
+    {
+        LockCursor();
+        Time.timeScale = 1f;
+        pausePanel.SetActive(false);
+        isPaused = false;
+    }
+
     private void Update()
     {
+        if (Input.GetButtonDown("ESC"))
+        {
+            TogglePause();
+        }
+
+
         if (Input.GetButtonDown("E"))
         {
             UnLockCursor();
-            //objClosedHand.transform.parent = this.transform;
         }
 
         if (Input.GetMouseButtonDown(0))

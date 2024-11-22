@@ -60,7 +60,7 @@ public class LiveSystem : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("Demo");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             hasDied = true;
             currentHealth = 0;
         }
